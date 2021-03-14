@@ -14,8 +14,8 @@ repositories {
 
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
-    compile 'com.github.steveice10:packetlib:1.9'
-    compile 'com.github.steveice10:mcprotocollib:1.16.4-SNAPSHOT'
+    compile 'com.github.Eoghanmc22:McPacketLib:e6af0f7876'
+    compile 'com.github.Eoghanmc22:packets:6383f00cff'
     // https://mvnrepository.com/artifact/commons-cli/commons-cli
     compile group: 'commons-cli', name: 'commons-cli', version: '1.4'
 }
