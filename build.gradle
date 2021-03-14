@@ -7,14 +7,15 @@ sourceCompatibility = 1.8
 mainClassName='com.jakubtomana.minecraft.serverstresstool.Loader'
 
 repositories {
+    mavenLocal()
     mavenCentral()
     maven { url 'https://jitpack.io' }
 }
 
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
-    compile 'com.github.Steveice10:MCProtocolLib:1.12.2-2'
-    compile 'com.github.Steveice10:OpenNBT:1.0'
+    compile 'com.github.steveice10:packetlib:1.9'
+    compile 'com.github.steveice10:mcprotocollib:1.16.4-SNAPSHOT'
     // https://mvnrepository.com/artifact/commons-cli/commons-cli
     compile group: 'commons-cli', name: 'commons-cli', version: '1.4'
 }

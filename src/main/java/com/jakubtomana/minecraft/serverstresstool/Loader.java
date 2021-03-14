@@ -24,16 +24,8 @@ public class Loader {
         basenick.setRequired(true);
         options.addOption(basenick);
 
-        Option logincommand = new Option("l", "logincmd", true, "login command without slash");
-        logincommand.setRequired(true);
-        options.addOption(logincommand);
-
-        Option registercommand = new Option("r", "registercmd", true, "register command without slash");
-        registercommand.setRequired(true);
-        options.addOption(registercommand);
-
         Option delay = new Option("d", "delay", true, "delay in ms between bot joins (default 5000ms)");
-        delay.setRequired(false);
+        delay.setRequired(true);
         options.addOption(delay);
 
         CommandLineParser parser = new DefaultParser();
@@ -47,16 +39,13 @@ public class Loader {
             System.exit(0);
             return;
         }
-        int delayT = 5000;
-        delayT = Integer.parseInt(cmd.getOptionValue("delay"));
         Stresser st = new Stresser(
                 cmd.getOptionValue("ip"),
                 Integer.parseInt(cmd.getOptionValue("port")),
                 Integer.parseInt(cmd.getOptionValue("threadnum")),
                 cmd.getOptionValue("nick"),
-                cmd.getOptionValue("logincmd"),
-                cmd.getOptionValue("registercmd"),
-                delayT,"","");
+                Integer.parseInt(cmd.getOptionValue("delay"))
+                );
         //st.getServerInfo();
         st.startStressTest();
     }
