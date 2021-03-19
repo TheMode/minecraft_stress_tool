@@ -101,7 +101,7 @@ public class Stresser {
             }
         });
 
-        client.getSession().connect(true);
+        client.getSession().connect(false);
     }
 
 }
